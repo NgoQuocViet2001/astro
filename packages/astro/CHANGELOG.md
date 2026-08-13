@@ -1,5 +1,19 @@
 # astro
 
+## 7.2.2
+
+### Patch Changes
+
+- [#17611](https://github.com/withastro/astro/pull/17611) [`9bc3207`](https://github.com/withastro/astro/commit/9bc3207fdbcdf8991596d0caeb66b707405aad07) Thanks [@thelazylamaGit](https://github.com/thelazylamaGit)! - Fixes component styles rendered from content entries remaining stale until a second save when an adapter uses Astro's fallback development environment
+
+- [#17634](https://github.com/withastro/astro/pull/17634) [`2267eee`](https://github.com/withastro/astro/commit/2267eeec7e88a47013465682d5278d7ea9253e5b) Thanks [@astrobot-houston](https://github.com/astrobot-houston)! - Fixes incremental builds dropping optimized images for cached pages when using a `collectStaticImages` prerenderer (e.g. `@astrojs/cloudflare` with compile-time image optimization)
+
+- [#17650](https://github.com/withastro/astro/pull/17650) [`4cdf128`](https://github.com/withastro/astro/commit/4cdf12873970dc542a18188fca1a9289ca1b0368) Thanks [@astrobot-houston](https://github.com/astrobot-houston)! - Fixes intermittent `ImageNotFound` errors during build on projects with many images. The build now limits concurrent image file reads to avoid exhausting OS file descriptors (EMFILE) and retries transient I/O errors with backoff. Non-transient errors are no longer silently swallowed.
+
+- [#17659](https://github.com/withastro/astro/pull/17659) [`90c6ea4`](https://github.com/withastro/astro/commit/90c6ea4641e2ca9362c4ab0ea7a8590d07bd1868) Thanks [@astrobot-houston](https://github.com/astrobot-houston)! - Fixes the Fonts API breaking `experimental.incrementalBuild` caching by embedding a build-local, randomly-assigned server port in generated code used for the dependency hash
+
+- [#17671](https://github.com/withastro/astro/pull/17671) [`09f0dc7`](https://github.com/withastro/astro/commit/09f0dc7f90ef92f8520e13b7ba130e4b8aad31bd) Thanks [@tarikermis](https://github.com/tarikermis)! - Fixes `astro dev` refusing to start after a Docker container restart when an unrelated process reuses the PID from a persisted lock file. Astro now checks the process command across platforms, so stale lock files are cleaned up and `--force` does not signal the unrelated process.
+
 ## 7.2.1
 
 ### Patch Changes
